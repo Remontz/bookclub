@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Neucha&family=Teko&family=Ubuntu+Condensed&family=Zeyada&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="navbar">
+        <h2>Welcome, Frodo!</h2>
+        <a href="login.html">Log Out</a>
+    </nav>
+    <section id="add-book">
+        <form>
+            <h3>Add a <span>New Book</span></h3>
+            <label for="new-book">Title:</label>
+            <input type="text" id="new-book" name="new-book" required size="10" />
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required minlength="5" />
+            <button type="submit">Add</button>
+        </form>
+    </section>
+    <section id="all-books">
+        <h3>All Books</h3>
+        <ul>
+            <li><a href="#">Book Title</a></li>
+            <li>(added by [user name])</li>
+            <li><a href="#">Add to Favorites</a></li>
+        </ul>
+    </section>
+</body>
+</html>

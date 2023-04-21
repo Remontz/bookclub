@@ -1,0 +1,54 @@
+/* css variable */
+:root {
+    --gold: #D9BB62;
+    --orange: #D99748;
+    --burnt-orange: #BF7534;
+    --rust: #8C3A1C;
+    --brown: #260D07;
+    --blue: lightseagreen;
+    --Neucha: 'Neucha', cursive;
+    --Teko: 'Teko', sans-serif;
+    --Ubuntu: 'Ubuntu Condensed', sans-serif;
+    --Zeyada: 'Zeyada', cursive;
+}
+
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--Neucha);
+    background-color: var(--gold);
+    color: var(--rust);
+}
+h1, h2, h3 {
+    margin: 0;
+    font-family: var(--Zeyada)
+}
+a {
+    color: var(--orange);
+}
+a:hover {
+    color: var(--blue);
+}
+
+/* background/DIV colors */
+.gold {
+    background-color: var(--gold);
+}
+.orange {
+    background-color: var(--orange);
+}
+.burnt-orange {
+    background-color: var(--burnt-orange);
+}
+.rust {
+    background-color: var(--rust);
+}
