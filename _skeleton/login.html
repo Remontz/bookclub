@@ -7,6 +7,31 @@
     <title>Login and Registration</title>
 </head>
 <body>
-    
+    <section>
+        <form method="POST" action="index.html">
+            <h2>Registration</h2>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required minlength="3" />
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required />
+            <label for="newEmail">Email</label>
+            <input type="text" id="newEmail" name="newEmail" required />
+            <label for="newPassword">Password</label>
+            <input type="text" id="newPassword" name="newPassword" required />
+            <label for="confirmPW">Confirm Password</label>
+            <input type="text" id="confirmPW" name="confirmPW" required />
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    <section>
+        <form method="POST" action="index.html">
+            <h2>Login</h2>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required />
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" required />
+            <button type="submit">Log In</button>
+        </form>
+    </section>
 </body>
 </html>
