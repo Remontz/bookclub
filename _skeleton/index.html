@@ -10,12 +10,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Teko&family=Ubuntu+Condensed&family=Zeyada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
-    <nav id="navbar">
-        <h2>Welcome, [User]!</h2>
-        <h1>Scribbler's Sanctuary</h1>
-        <a href="login.html">Log Out</a>
+<!-- 
+        --TODO--
+    BOOK VALIDATIONS:
+        // title is required
+        // description must be at least 5 characters
+        // books uploaded by a user should be auto-favorited by that user
+    PAGE FUNCTIONALITY:
+        // main page displays a list of all books uploaded by all users
+        // if the logged user has not favorited the book, there should be a link so the user can add it to their favorites, otherwise, display a message indicating the book has already been favorited.
+        // Jen Kramer's (Frontend Masters) adv css layout course for hamburger button setup
+-->
+    <nav>
+        <ul>
+            <li id="title">
+                <h1><a href="index.html">Welcome, [User]</a></h1>
+            </li>
+            <li>
+                <a href="favorites.html">
+                    <ul id="icon">
+                        <li><span class="fa-solid fa-bookmark" aria-hidden="true"></span></li>
+                        <li><span><small>Favorites</small></span></li>
+                    </ul>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <ul id="icon">
+                        <li><span class="fa-solid fa-brands fa-earlybirds" aria-hidden="true"></span></li>
+                        <li><span><small>Edit Profile</small></span></li>
+                    </ul>
+                </a>
+            </li>
+            <li>
+                <a href="editor.html">
+                    <ul id="icon">
+                        <li><span class="fa-solid fa-feather-pointed fa-beat" aria-hidden="true"></span></li>
+                        <li><span><small>Writing Mode</small></span></li>
+                    </ul>
+                </a>
+            </li>
+            <li>
+                <a id="logout" href="login.html">
+                    <ul id="icon">
+                        <li><span class="fa-solid fa-power-off button" aria-hidden="true"></span></li>
+                        <li><span class="sr-only"><small>Logout</small></span></li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+        <img src="../images/Owl_Logo.png" alt="Scribbler's Sanctuary Logo _ The Nest for Aspiring Writers" />
     </nav>
     <section id="add-book">
         <form>
@@ -35,5 +83,15 @@
             <li><a href="#">Add to Favorites</a></li>
         </ul>
     </section>
+    <footer>
+        <h2>Contact the Developer</h2>
+        <h3><img src="../images/Owl_Icon.png" alt="Scribbler the Owl icon" /> Kacy Gilbert <img src="../images/Owl_Icon.png" alt="Scribbler the Owl icon" /></h3>
+        <ul>
+            <li>LinkedIn</li>
+            <li>Github</li>
+            <li>Email</li>
+        </ul>
+        <p><small>&copy; 2023 - Kacy Gilbert. All rights reserved.</small></p>
+    </footer>
 </body>
 </html>

@@ -1,11 +1,14 @@
 /* css variable */
 :root {
-    --gold: #D9BB62;
-    --orange: #D99748;
-    --burnt-orange: #BF7534;
-    --rust: #8C3A1C;
-    --brown: #260D07;
-    --blue: lightseagreen;
+    --dark-blue: #011F26;
+    --steel: lightsteelblue;
+    --ocean: #01403A;
+    --green: #489723;
+    --orange: #f77824;
+    --yellow: #F2B705;
+    --gold: #F29F05;
+    --silver: #7e8e8b;
+    --font-size: 1.3rem;
     --Neucha: 'Neucha', cursive;
     --Teko: 'Teko', sans-serif;
     --Ubuntu: 'Ubuntu Condensed', sans-serif;
@@ -25,30 +28,117 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--Neucha);
-    background-color: var(--gold);
-    color: var(--rust);
+    background-color: black ;
+    color: var(--silver);
 }
-h1, h2, h3 {
-    margin: 0;
-    font-family: var(--Zeyada)
+
+h3 {
+    color: var(--steel)
 }
-a {
+a{
     color: var(--orange);
 }
 a:hover {
-    color: var(--blue);
+    color: var(--green)
 }
 
+/* ---------- */
 /* background/DIV colors */
-.gold {
-    background-color: var(--gold);
+
+/* ---------- */
+/* ---------- */
+/* Navbar */
+nav {
+    font-family: var(--Neucha);
+    font-size: 70%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.orange {
+nav a {
+    text-decoration: none;
+    color: var(--steel);
+    display: block;
+}
+nav a:hover, nav #navbar [class*="fa-"]:hover {
+    color: var(--orange);
+}
+nav ul {
+    list-style-type: none;
+    font-family: var(--Zeyada);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5rem;
+}
+nav li:first-child {
+    font-size: 1rem;
+    font-family: var(--Neucha);
+    letter-spacing: 0.35rem;
+    flex-basis: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+nav #icon {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+nav .button {
+    color: var(--ocean);
+    background-color: var(--silver);
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+nav .button:hover {
     background-color: var(--orange);
 }
-.burnt-orange {
-    background-color: var(--burnt-orange);
+nav img {
+    height: 15rem;
+    width: 30rem;
+    border-bottom: 0.5px var(--orange) solid;
+    border-top: 0.5px var(--orange) solid;
+    border-radius: 35px;
 }
-.rust {
-    background-color: var(--rust);
+
+/* Responsive */
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto; /* Pushes title to left as far as space allows */
+    }
 }
+/* ---------- */
+/* ---------- */
+/* Footer */
+footer {
+    font-family: var(--Ubuntu);
+    text-align: center;
+}
+footer img {
+    height: 10px;
+    width: 20px;
+}
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3.5rem;
+    font-size: 3rem;
+}
+
+/* ---------- */
