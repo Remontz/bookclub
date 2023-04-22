@@ -33,13 +33,14 @@ body {
 }
 
 h2,h3 {
-    color: var(--steel)
+    color: var(--steel);
 }
 a{
     color: var(--orange);
 }
 a:hover {
-    color: var(--ocean)
+    color: var(--ocean);
+    cursor: pointer;
 }
 
 /* ---------- */
@@ -230,6 +231,74 @@ nav img {
         height: 10rem;
     }
 
+    
+    /* Creator Details */
+    .content #books-info {
+        color: var(--ocean);
+        font-size: 1rem;
+        display: flex;
+        flex-flow: column wrap;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+    }
+    .content #books-info h3 {
+        margin: 0;
+        padding: 0;
+    }
+    .content #books-info ul {
+        list-style-type: none;
+
+    }
+    .content #books-info li div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: justify;
+    }
+    form label {
+        text-align: left;
+        padding-top: 10px;
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    form textarea {
+        margin: 0;
+        padding: 1rem;
+        border: 2px solid var(--ocean);
+        border-radius: 25px;
+        text-align: left;
+        font-family: var(--Zeyada);
+        font-size: 1.3rem;
+        color: var(--orange);
+        font-weight:600;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .button {
+        background-color: var(--steel);
+        border: none;
+        border-bottom: 2px solid var(--orange);
+        border-left: 2px solid var(--orange);
+        border-right: 2px solid var(--orange);
+        border-radius: 25px;
+        width: 10rem;
+    }
+    #users-info {
+        color: var(--ocean);
+        font-weight: bold;
+    }
+    #books-info h3, #users-info h3 {
+        font-size: 1.5rem;
+        font-family: var(--Zeyada);
+    }
+    #users-info h3, #books-info h5 {
+        padding: 0;
+        margin: 0;
+    }
+    /* ----- */
 /* ---------- */
 /* ---------- */
 /* Footer */

@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Details Page for Creator</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Teko&family=Ubuntu+Condensed&family=Zeyada&display=swap" rel="stylesheet">
-
-    <title>Details Page for Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <!-- 
@@ -18,37 +19,116 @@
     PAGE FUNCTIONALITY
     // if the logged in user is the one who uploaded the book, they can edit the book's description and title, or delete the entire book
 -->
-    <nav id="navbar">
-        <h2>Welcome, [User]!</h2>
-        <h1>Scribbler's Sanctuary</h1>
-        <a href="login.html">Log Out</a>
-    </nav>
-    <section id="book-info">
-        <h3>Book Title</h3>
-        <ul>
-            <li>Added by: [Current User]</li>
-            <li>Added on: [Date Added @ Time Added]</li>
-            <li>Last updated on: [Date Updated @ Time Updated]</li>
-            <li>
-                <form>
-                    <label for="description">Description:</label>
-                    <textarea id="description" name="description" rows="4" cols="20">
-                        [Current Description]
-                    </textarea>
-                </form>
-                <section>
-                    <button type="submit">Update</button>
-                    <button type="button">Delete</button>
-                </section>
-            </li>
-        </ul>
-    </section>
-    <section id="users-info">
-        <h3>Users Who Like This Book:</h3>
-        <ul>
-            <li>[User] <span><a>Un-Favorite</a></span></li>
-            <li>[Another User] <span hidden><a>Un-Favorite</a></span></li>
-        </ul>
-    </section>
+<nav>
+    <ul>
+        <li id="title">
+            <h1><a href="index.html">Welcome, [User]</a></h1>
+        </li>
+        <li>
+            <a href="favorites.html">
+                <ul id="icon">
+                    <li><span class="fa-solid fa-bookmark" aria-hidden="true"></span></li>
+                    <li><span><small>Favorites</small></span></li>
+                </ul>
+            </a>
+        </li>
+        <li>
+            <a href="user.html">
+                <ul id="icon">
+                    <li><span class="fa-solid fa-brands fa-earlybirds" aria-hidden="true"></span></li>
+                    <li><span><small>Edit Profile</small></span></li>
+                </ul>
+            </a>
+        </li>
+        <li>
+            <a href="editor.html">
+                <ul id="icon">
+                    <li><span class="fa-solid fa-feather-pointed fa-beat" aria-hidden="true"></span></li>
+                    <li><span><small>Writing Mode</small></span></li>
+                </ul>
+            </a>
+        </li>
+        <li>
+            <a id="logout" href="login.html">
+                <ul id="icon">
+                    <li><span class="fa-solid fa-power-off button" aria-hidden="true"></span></li>
+                    <li><span class="sr-only"><small>Logout</small></span></li>
+                </ul>
+            </a>
+        </li>
+    </ul>
+    <img src="../images/Owl_Logo.png" alt="Scribbler's Sanctuary Logo _ The Nest for Aspiring Writers" />
+</nav>
+<div class="gradient"></div>
+<div class="silver">
+    <div class="content">
+        <section id="books-info">
+            <h3>Book Title</h3>
+            <ul>
+                <li>
+                    <div>
+                        <span>Added by:</span> 
+                        <span>[Current User]</span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span>Added on:</span>
+                        <span>[Date Added @ Time Added]</span> 
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span>Last updated on:</span>
+                        <span>[Date Updated @ Time Updated]</span>
+                    </div>
+                </li>
+                <li>
+                    <form>
+                        <label for="current-description">Description:</label>
+                        <textarea id="current-description" name="current-description" rows="4" cols="20" placeholder="[Current Description]"></textarea>
+                        <div class="buttons">
+                            <button type="submit">Update</button>
+                            <button type="button">Delete</button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </section>
+        <section id="users-info">
+            <h3>Users Who Like This Book:</h3>
+            <ul>
+                <li>[User] <span><a>Un-Favorite</a></span></li>
+                <li>[Another User] <span hidden><a>Un-Favorite</a></span></li>
+            </ul>
+        </section>
+    </div>
+</div>
+    <div class="gradient"></div>
+<footer>
+    <h2>Contact the Developer</h2>
+    <h3><img src="../images/Owl_Icon.png" alt="Scribbler the Owl icon" /> Kacy Gilbert <img src="../images/Owl_Icon.png" alt="Scribbler the Owl icon" /></h3>
+    <ul>
+        <li> 
+            <a href="https://www.linkedin.com/in/kacy-gilbert-225324aa/" target="_blank" rel="noopener" > 
+                    <span class="fa-brands fa-linkedin" aria-hidden="true"></span> 
+                    <span class="sr-only">LinkedIn</span>
+            </a>
+        </li>
+        <li>                     
+            <a href="https://github.com/Remontz" target="_blank" rel="noopener">
+                <span class="fa-brands fa-github" aria-hidden="true"></span>
+                <span class="sr-only">GitHub</span>
+            </a> 
+        </li>
+        <li> 
+            <a href="mailto:gilbertkacy90@gmail.com">
+                    <span class="fa-solid fa-envelope"></span>
+                    <span class="sr-only">Email</span>
+            </a>
+        </li>
+    </ul>
+    <p><small>&copy; 2023 - Kacy Gilbert. All rights reserved.</small></p>
+</footer>
 </body>
 </html>
