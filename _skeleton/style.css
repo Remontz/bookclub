@@ -29,21 +29,53 @@ body {
     margin: 0;
     font-family: var(--Neucha);
     background-color: black ;
-    color: var(--silver);
+    color: black;
 }
 
-h3 {
+h2,h3 {
     color: var(--steel)
 }
 a{
     color: var(--orange);
 }
 a:hover {
-    color: var(--green)
+    color: var(--ocean)
 }
 
 /* ---------- */
 /* background/DIV colors */
+.dark-blue {
+    background-color: var(--dark-blue);
+}
+.steel {
+    background-color: var(--steel);
+}
+.ocean {
+    background-color: var(--ocean);
+}
+.green {
+    background-color: var(--green);
+}
+.orange {
+    background-color: var(--orange);
+}
+.yellow {
+    background-color: var(--yellow);
+}
+.gold {
+    background-color: var(--gold);
+}
+.silver {
+    background-color: var(--silver);
+}
+.gradient {
+    background: rgb(126,142,139);
+    background: linear-gradient(119deg, rgba(126,142,139,1) 0%, rgba(247,120,36,1) 100%);
+    height: 2px;
+    padding: 0;
+    margin: 0;
+}
+
 
 /* ---------- */
 /* ---------- */
@@ -90,6 +122,11 @@ nav #icon {
     justify-content: center;
     align-items: center;
 }
+nav #icon{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 nav .button {
     color: var(--ocean);
     background-color: var(--silver);
@@ -118,7 +155,81 @@ nav img {
         text-align: left;
         margin-right: auto; /* Pushes title to left as far as space allows */
     }
+    nav img {
+        height: 12rem;
+        width: 35rem;
+    }
 }
+
+/* ---------- */
+/* ---------- */
+/* Content */
+    body .content {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0 10%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        font-size: 1.2rem;
+    }
+
+    body .content form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        flex: 1;
+    }
+
+    button {
+        background-color: var(--steel);
+        border: none;
+        border-bottom: 2px solid var(--orange);
+        border-left: 2px solid var(--orange);
+        border-right: 2px solid var(--orange);
+        border-radius: 25px;
+        width: 10rem;
+        align-self: center;
+    }
+
+    .all-books {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .book-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-evenly;
+        justify-items: center;
+        align-content: space-evenly;
+        align-items: center;
+        padding-bottom: 5rem;
+        gap: 1rem;
+    }
+    .book-list a {
+        font-size: 150%;
+    }
+    .book-info {
+        background-image: url('../images/Owl_Icon.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        list-style-type: none;
+        padding: 0 15px;
+        margin: 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-size: 80%;
+        border: 1px solid var(--orange);
+        border-radius: 15px;
+        height: 10rem;
+    }
+
 /* ---------- */
 /* ---------- */
 /* Footer */
