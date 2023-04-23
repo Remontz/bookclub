@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react'
+// import React, {useRef, useState, useEffect} from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import darkDays from '../testPDFs/Dark_Days.pdf'
@@ -10,13 +10,13 @@ const Home = (props) => {
   const testBook = {
         title: 'Test Book',
         url: {darkDays},
-        favoritedBy: [userRef],
-        author: userRef,
+        favoritedBy: 'Test User',
+        author: 'Admin',
         dateCreated: '20-APR-2023',
         lastUpdate: '10:45:22 21-APR-2023',
         description: 'This is a test description for a test book.  The backend will hold this model, and call this data.'
     }
-  console.log(userRef)
+  // console.log(userRef)
   console.log(linkedIn);
   console.log(gitHub);
   console.log(portfolio);

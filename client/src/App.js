@@ -1,31 +1,30 @@
 import './App.css';
-import { useState, useRef } from 'react';
+import { useState, /*useRef*/ } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas, faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import Register from './views/Register';
+import Login from './views/Login';
 import About from './views/About';
 import CreateBook from './views/CreateBook';
 import Dashboard from './views/Dashboard';
 import EditBook from './views/EditBook';
 import EditUser from './views/EditUser';
 import Home from './views/Home';
-import Login from './views/Login';
 import ViewBook from './views/ViewBook';
 
 function App() {
   library.add(fab, fas, faCheck, faTimes, faInfoCircle)
-
 
   const extLinks =  {
     linkedIn: 'https://www.linkedin.com/in/kacy-gilbert-225324aa/',
     gitHub: 'https://github.com/Remontz',
     portfolio: 'https://kacy-gilbert-devportfolio.netlify.app/'
   }
-
   const {linkedIn, gitHub, portfolio} = extLinks
+
   return (
     <BrowserRouter>
     <main>

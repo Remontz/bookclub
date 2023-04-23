@@ -1,12 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import OWL_ICON_orange from '../images/Owl_Icon_Orange.png'
+import OWL_ICON_ocean from '../images/Owl_Icon_Ocean.png'
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
-
 const Register = () => {
+  const [hover, setHover] = useState(false);
 
   const userRef = useRef()
   const errRef = useRef()
@@ -55,10 +57,8 @@ const Register = () => {
       return;
     }
     console.log(user, pwd);
-    console.log('create teh a backend')
+    console.log('TODO BACKEND AFTER NODE.JS COURSE!!!')
     setSuccess(true)
-
-    
   }
 
   return (
@@ -68,14 +68,15 @@ const Register = () => {
         <h1>Successful Registration</h1>
         <Link to='/home'>Continue to Scribbler's Sanctuary.</Link>
         <Link to='/dashboard'>Check out your Nest.</Link>
+        <Link to='/login'>Sign In.</Link>
     </section> ) : (
     <section className='log-reg'>
-      <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p> {/*if an error exist it's shown.*/}
+      <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'> {errMsg} </p> {/*if an error exist it's shown.*/}
       <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-
+      <div className='auth-form-container'>
+        <form onSubmit={handleSubmit} className='register-form'>
         {/* USER INPUT */}
-        <label htmlFor='userName'>
+          <label htmlFor='userName'>
           Username:
           <span className={validName ? 'valid' : 'hide'}>
             <FontAwesomeIcon icon='fa-check' />
@@ -83,8 +84,8 @@ const Register = () => {
           <span className={validName || !user ? 'hide' : 'invalid'}>
             <FontAwesomeIcon icon='fa-times' />
           </span>
-        </label>
-        <input
+          </label>
+          <input
           type='text'  /*  */ 
           id='username'  /*  */
           ref = {userRef}  /* allows us to set focus on the input */
@@ -95,16 +96,16 @@ const Register = () => {
           aria-describedby='uidnote'  /* screen reader description, to set rules that input field must follow  */
           onFocus={() => setUserFocus(true)}  /* whether input field has Focus */
           onBlur={() => setUserFocus(false)}  /* when input field is left set to false */
-        />
-        <p id='uidnote' className={userFocus && user && !validName ? 'instructions' : 'offscreen'}>
+          />
+          <p id='uidnote' className={userFocus && user && !validName ? 'instructions' : 'offscreen'}>
           <FontAwesomeIcon icon='fa-infoCircle' />
           4 to 24 characters.<br />
           Must begin with a letter.<br />
           Letters, numbers, underscores, hyphens allowed.
-        </p>
+          </p>
 
         {/* PASSWORD INPUT */}
-        <label htmlFor='password'>
+          <label htmlFor='password'>
           Password:
           <span className={validPwd ? 'valid' : 'hide'}>
             <FontAwesomeIcon icon='fa-check' />
@@ -112,8 +113,8 @@ const Register = () => {
           <span className={validPwd || !pwd ? 'hide' : 'invalid'}>
             <FontAwesomeIcon icon='fa-times' />
           </span>
-        </label>
-        <input
+          </label>
+          <input
           type='password'  /* doesn't support autocomplete, no reference = no focus */ 
           id='password'  /*  */
           onChange={(e) => setPwd(e.target.value)}  /* ties the input to the password state */
@@ -122,15 +123,16 @@ const Register = () => {
           aria-describedby='pwdnote'  /* screen reader description, to set rules that input field must follow  */
           onFocus={() => setPwdFocus(true)}  /* whether input field has Focus */
           onBlur={() => setPwdFocus(false)}  /* when input field is left set to false */
-        />
-        <p id='pwdnote' className={pwdFocus && !validPwd ? 'instructions' : 'offscreen'}>
+          />
+          <p id='pwdnote' className={pwdFocus && !validPwd ? 'instructions' : 'offscreen'}>
           <FontAwesomeIcon icon='fa-infoCircle' />
           8 to 24 characters.<br />
           Must include uppercase and lowercase letters, a number and a special character.<br />
           Allowed special characters: <span aria-label='exclamation mark'>!</span> <span aria-label='at symbol'>@</span> <span aria-label='hashtag'>#</span> <span aria-label='dollar sign'>$</span> <span aria-label='percent'>%</span>
-        </p>
+          </p>
+
         {/* CONFIRM INPUT */}
-        <label htmlFor='confirm_pwd'>
+          <label htmlFor='confirm_pwd'>
           Confirm Password:
           <span className={validMatch && matchPwd ? 'valid' : 'hide'}>
             <FontAwesomeIcon icon='fa-check' />
@@ -138,8 +140,8 @@ const Register = () => {
           <span className={validMatch || !matchPwd ? 'hide' : 'invalid'}>
             <FontAwesomeIcon icon='fa-times' />
           </span>
-        </label>
-        <input
+          </label>
+          <input
           type='password'  /* doesn't support autocomplete, no reference = no focus */ 
           id='confirm_pwd'  /*  */
           onChange={(e) => setMatchPwd(e.target.value)}  /* ties the input to the password state */
@@ -148,19 +150,28 @@ const Register = () => {
           aria-describedby='confirmnote'  /* screen reader description, to set rules that input field must follow  */
           onFocus={() => setMatchFocus(true)}  /* whether input field has Focus */
           onBlur={() => setMatchFocus(false)}  /* when input field is left set to false */
-        />
-        <p id='confirmnote' className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}>
+          />
+          <p id='confirmnote' className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}>
           <FontAwesomeIcon icon='fa-infoCircle' />
           Must match the password field.
-        </p>
-        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up!</button>
-      </form>
-      <p>
-        Already registered?<br />
-        <span className='line'>
-          <Link to='/login'>SignIn</Link>
-        </span>
-      </p>
+          </p>
+          <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up!</button>
+        </form>
+        <section className='line'>
+          {hover ? <span className='orange-text'>Sign</span> : <span className='ocean-text'>Already</span>}
+          <button className='link-btn'>
+            <Link to='/login'>
+              <img
+                onMouseOver = {() => setHover(true)}
+                onMouseOut = {() => setHover(false)}
+                alt = 'Scribbler the Owl: Icon'
+                src = { hover ? OWL_ICON_ocean : OWL_ICON_orange }
+              />
+              </Link>
+          </button>
+          {hover ? <span className='orange-text'>In!</span> : <span className='ocean-text'>Registered?</span>}
+        </section>
+      </div>
     </section> 
     )}
     </>
