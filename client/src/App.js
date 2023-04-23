@@ -1,4 +1,5 @@
 import './App.css';
+import { useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -17,22 +18,27 @@ import ViewBook from './views/ViewBook';
 function App() {
   library.add(fab, fas)
 
+  const userNameRef = useRef('');
+  const callback = (currentName) => {
+    console.log(currentName)
+    // setUserName(currentName)
+  }
   const extLinks =  {
     linkedIn: 'https://www.linkedin.com/in/kacy-gilbert-225324aa/',
     gitHub: 'https://github.com/Remontz',
     portfolio: 'https://kacy-gilbert-devportfolio.netlify.app/'
   }
   const user = {
-    name: 'Test Name',
+    name: userNameRef,
     email: 'email@xyz.com',
     password: 'test1234!'
-}
+  }
   const {linkedIn, gitHub, portfolio} = extLinks
   return (
     <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route element={<Register />} path='/' />
+        <Route element={<Register callback = {callback} />} path='/' />
         <Route element={<Login />} path='/login' />
         <Route element={<Home user={user} linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/home' />
         <Route element={<Dashboard />} path='/dashboard' />

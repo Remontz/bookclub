@@ -21,6 +21,7 @@ const Home = (props) => {
   console.log(linkedIn);
   console.log(gitHub);
   console.log(portfolio);
+  console.log(testBook);
   return (
     <div>
       <Nav user={user} />

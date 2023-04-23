@@ -1,20 +1,15 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24} $/;
 const Register = ({user}) => {
-  const [currentName, setCurrentName] = useState('');
-  const handleSubmit = () => {
-    user.name.current = currentName
-  }
+
   return (
     <div>
       <h1>Register</h1>
-      <Link to='/home'>Home</Link>
-      <form onSubmit={(e)=>handleSubmit()}>
-        <label htmlFor='currentName'>User Name:</label>
-        <input type='text' id='currentName' name='currentName' required minLength='3' onChange={(e)=>setCurrentName(e.target.value)} />
-        <button>Change User Name</button>
-      </form>
+
     </div>
   )
 }
