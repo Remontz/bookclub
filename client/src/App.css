@@ -1,5 +1,81 @@
+/* css variable */
+:root {
+  --dark-blue: #011F26;
+  --steel: lightsteelblue;
+  --ocean: #01403A;
+  --green: #489723;
+  --orange: #f77824;
+  --yellow: #F2B705;
+  --gold: #F29F05;
+  --silver: #7e8e8b;
+  --font-size: 1.3rem;
+  --Neucha: 'Neucha', cursive;
+  --Teko: 'Teko', sans-serif;
+  --Ubuntu: 'Ubuntu Condensed', sans-serif;
+  --Zeyada: 'Zeyada', cursive;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .App {
+  padding: 0;
+  margin: 0;
+  font-family: var(--Neucha);
+  background-color: black ;
+  color: black;
   text-align: center;
+}
+
+h2,h3 {
+  color: var(--steel);
+}
+a{
+  color: var(--orange);
+}
+a:hover {
+  color: var(--ocean);
+  cursor: pointer;
+}
+
+/* ---------- */
+/* background/DIV colors */
+.dark-blue {
+  background-color: var(--dark-blue);
+}
+.steel {
+  background-color: var(--steel);
+}
+.ocean {
+  background-color: var(--ocean);
+}
+.green {
+  background-color: var(--green);
+}
+.orange {
+  background-color: var(--orange);
+}
+.yellow {
+  background-color: var(--yellow);
+}
+.gold {
+  background-color: var(--gold);
+}
+.silver {
+  background-color: var(--silver);
+}
+.gradient {
+  background: rgb(126,142,139);
+  background: linear-gradient(119deg, rgba(126,142,139,1) 0%, rgba(247,120,36,1) 100%);
+  height: 2px;
+  padding: 0;
+  margin: 0;
 }
 
 @keyframes logo-spin {

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const Login = () => {
+const Login = (props) => {
   return (
     <div>Login</div>
   )
