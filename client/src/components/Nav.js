@@ -1,12 +1,10 @@
 import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
-import { useNavigate } from 'react-router-dom'
 import logo from '../images/Owl_Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = (props) => {
     const user = props.user;
-    const move = useNavigate()
     console.log('Props:')
     console.log(props)
     console.log('User:')
@@ -44,12 +42,12 @@ const Nav = (props) => {
                 </Link>
             </li>
             <li>
-                <a onClick={()=>move('/login')} id="logout" href="login.html">
+                <Link to='/login'>
                     <ul id="icon">
                         <li><FontAwesomeIcon icon="fa-solid fa-power-off" aria-hidden="true" /></li>
                         <li><span className="sr-only"><small>Logout</small></span></li>
                     </ul>
-                </a>
+                </Link>
             </li>
         </ul>
         <img src={logo} alt="Scribbler's Sanctuary Logo _ The Nest for Aspiring Writers" />

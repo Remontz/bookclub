@@ -18,6 +18,7 @@ import ViewBook from './views/ViewBook';
 function App() {
   library.add(fab, fas, faCheck, faTimes, faInfoCircle)
 
+
   const extLinks =  {
     linkedIn: 'https://www.linkedin.com/in/kacy-gilbert-225324aa/',
     gitHub: 'https://github.com/Remontz',
@@ -28,6 +29,7 @@ function App() {
   return (
     <BrowserRouter>
     <main>
+
       <Routes>
         <Route element={<Register  />} path='/' />
         <Route element={<Login />} path='/login' />

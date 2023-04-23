@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
@@ -7,6 +7,7 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 
 const Register = () => {
+
   const userRef = useRef()
   const errRef = useRef()
 
@@ -45,12 +46,34 @@ const Register = () => {
     setErrMsg('')
   }, [user, pwd, matchPwd])
 
+  const handleSubmit = async (e) => {
+    e.preventDefault() /* Submit button could be JS Hacked. validates the user password again. */
+    const v1 = USER_REGEX.test(user);
+    const v2 = PWD_REGEX.test(pwd);
+    if(!v1 || !v2) {
+      setErrMsg('Invalid Entry')
+      return;
+    }
+    console.log(user, pwd);
+    console.log('create teh a backend')
+    setSuccess(true)
+
+    
+  }
 
   return (
+    <>
+    {success ? (
+    <section>
+        <h1>Successful Registration</h1>
+        <Link to='/home'>Continue to Scribbler's Sanctuary.</Link>
+        <Link to='/dashboard'>Check out your Nest.</Link>
+    </section> ) : (
     <section className='log-reg'>
       <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>{errMsg}</p> {/*if an error exist it's shown.*/}
       <h1>Register</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
+
         {/* USER INPUT */}
         <label htmlFor='userName'>
           Username:
@@ -130,10 +153,18 @@ const Register = () => {
           <FontAwesomeIcon icon='fa-infoCircle' />
           Must match the password field.
         </p>
+        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up!</button>
       </form>
-
-    </section>
+      <p>
+        Already registered?<br />
+        <span className='line'>
+          <Link to='/login'>SignIn</Link>
+        </span>
+      </p>
+    </section> 
+    )}
+    </>
   )
-}
+    }
 
 export default Register
