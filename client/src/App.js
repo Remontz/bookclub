@@ -36,7 +36,7 @@ function App() {
   const {linkedIn, gitHub, portfolio} = extLinks
   return (
     <BrowserRouter>
-    <div className="App">
+    <main>
       <Routes>
         <Route element={<Register callback = {callback} />} path='/' />
         <Route element={<Login />} path='/login' />
@@ -54,7 +54,7 @@ function App() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Teko&family=Ubuntu+Condensed&family=Zeyada&display=swap" rel="stylesheet" />
       </Helmet>
-    </div>
+    </main>
     </BrowserRouter>
   );
 }
