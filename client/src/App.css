@@ -33,6 +33,23 @@ main {
   text-align: center;
 }
 
+.log-reg {
+  color: white;
+}
+.offscreen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.hide {
+  display: none;
+}
+
 h2,h3 {
   color: var(--steel);
 }

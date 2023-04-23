@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fas, faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import Register from './views/Register';
 import About from './views/About';
 import CreateBook from './views/CreateBook';
@@ -16,31 +16,22 @@ import Login from './views/Login';
 import ViewBook from './views/ViewBook';
 
 function App() {
-  library.add(fab, fas)
+  library.add(fab, fas, faCheck, faTimes, faInfoCircle)
 
-  const userNameRef = useRef('');
-  const callback = (currentName) => {
-    console.log(currentName)
-    // setUserName(currentName)
-  }
   const extLinks =  {
     linkedIn: 'https://www.linkedin.com/in/kacy-gilbert-225324aa/',
     gitHub: 'https://github.com/Remontz',
     portfolio: 'https://kacy-gilbert-devportfolio.netlify.app/'
   }
-  const user = {
-    name: userNameRef,
-    email: 'email@xyz.com',
-    password: 'test1234!'
-  }
+
   const {linkedIn, gitHub, portfolio} = extLinks
   return (
     <BrowserRouter>
     <main>
       <Routes>
-        <Route element={<Register callback = {callback} />} path='/' />
+        <Route element={<Register  />} path='/' />
         <Route element={<Login />} path='/login' />
-        <Route element={<Home user={user} linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/home' />
+        <Route element={<Home linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/home' />
         <Route element={<Dashboard />} path='/dashboard' />
         <Route element={<EditUser />} path='/editUser' />
         <Route element={<EditBook />} path='/editor' />
