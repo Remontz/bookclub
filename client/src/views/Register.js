@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24} $/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 
 const Register = () => {
@@ -36,7 +36,7 @@ const Register = () => {
   }, [user])
 
   useEffect(() => {
-    setValidPwd(USER_REGEX.test(pwd))
+    setValidPwd(PWD_REGEX.test(pwd))
     setValidMatch(pwd === matchPwd)
   }, [pwd, matchPwd])
 
@@ -105,6 +105,30 @@ const Register = () => {
           8 to 24 characters.<br />
           Must include uppercase and lowercase letters, a number and a special character.<br />
           Allowed special characters: <span aria-label='exclamation mark'>!</span> <span aria-label='at symbol'>@</span> <span aria-label='hashtag'>#</span> <span aria-label='dollar sign'>$</span> <span aria-label='percent'>%</span>
+        </p>
+        {/* CONFIRM INPUT */}
+        <label htmlFor='confirm_pwd'>
+          Confirm Password:
+          <span className={validMatch && matchPwd ? 'valid' : 'hide'}>
+            <FontAwesomeIcon icon='fa-check' />
+          </span>
+          <span className={validMatch || !matchPwd ? 'hide' : 'invalid'}>
+            <FontAwesomeIcon icon='fa-times' />
+          </span>
+        </label>
+        <input
+          type='password'  /* doesn't support autocomplete, no reference = no focus */ 
+          id='confirm_pwd'  /*  */
+          onChange={(e) => setMatchPwd(e.target.value)}  /* ties the input to the password state */
+          required  /*  */
+          aria-invalid={validMatch ? 'false' : 'true'}  /* set to True when the component loads.  Lets a screen reader announce whether the input fields need adjustment before the submission */
+          aria-describedby='confirmnote'  /* screen reader description, to set rules that input field must follow  */
+          onFocus={() => setMatchFocus(true)}  /* whether input field has Focus */
+          onBlur={() => setMatchFocus(false)}  /* when input field is left set to false */
+        />
+        <p id='confirmnote' className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}>
+          <FontAwesomeIcon icon='fa-infoCircle' />
+          Must match the password field.
         </p>
       </form>
 
