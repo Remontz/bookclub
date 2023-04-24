@@ -40,6 +40,7 @@ function App() {
         <Route element={<About linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/about' />
       </Routes>
       <Helmet>
+        <meta name="google-site-verification" content="2q6eKNMWpbgPeaba3SQGyIx-Q6aPsdS9KUXVZ2Vlp2U" />
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
