@@ -42,7 +42,7 @@ const Nav = (props) => {
                         className={createBookHover ? null : 'button'}
                         onMouseOver={() => setCreateBookHover(true)}
                         onMouseOut={() => setCreateBookHover(false)} 
-                    >{createBookHover ? (<Link to="/createBook"><span>Writer's Mode</span></Link>) : (<Link to="/createBook"><span><FontAwesomeIcon icon="fa-solid fa-feather-pointed fa-beat" aria-hidden="true" /></span></Link>) }
+                    >{createBookHover ? (<Link to="/editor"><span>Writer's Mode</span></Link>) : (<Link to="/editor"><span><FontAwesomeIcon icon="fa-solid fa-feather-pointed fa-beat" aria-hidden="true" /></span></Link>) }
                     </li>
                 </ul>
             </li>

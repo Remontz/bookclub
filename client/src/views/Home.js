@@ -10,7 +10,6 @@ import '../styles/home.css'
 const Home = (props) => {
   const { linkedIn, gitHub, portfolio} = props;
 
-
   return (
     <div className='home'>
       <Nav />

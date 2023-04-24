@@ -1,8 +1,19 @@
 import React from 'react'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
-const EditUser = () => {
+const EditUser = (props) => {
+  const { linkedIn, gitHub, portfolio} = props;
   return (
-    <div>EditUser</div>
+    <div>
+      <Nav />
+      <div className='gradient'></div>
+      <div className=''>
+        EDIT USER
+      </div>
+      <div className='gradient'></div>
+      <Footer linkedIn={linkedIn} gitHub={gitHub} portfolio ={portfolio} />
+    </div>
   )
 }
 

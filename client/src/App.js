@@ -32,12 +32,12 @@ function App() {
         <Route element={<Register  />} path='/' />
         <Route element={<Login />} path='/login' />
         <Route element={<Home linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/home' />
-        <Route element={<Dashboard />} path='/dashboard' />
-        <Route element={<EditUser />} path='/editUser' />
-        <Route element={<EditBook />} path='/editor' />
+        <Route element={<Dashboard linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio}  />} path='/dashboard' />
+        <Route element={<EditUser linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/editUser' />
+        <Route element={<EditBook linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/editor' />
         <Route element={<CreateBook />} path='/writer' />
-        <Route element={<ViewBook />} path='/reader' />
-        <Route element={<About />} path='/about' />
+        <Route element={<ViewBook linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/reader' />
+        <Route element={<About linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/about' />
       </Routes>
       <Helmet>
         <link rel="stylesheet" href="style.css" />

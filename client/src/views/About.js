@@ -1,8 +1,19 @@
 import React from 'react'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
-const About = () => {
+const About = (props) => {
+  const { linkedIn, gitHub, portfolio} = props;
   return (
-    <div>About</div>
+    <div>
+      <Nav />
+      <div className='gradient'></div>
+      <div className=''>
+        ABOUT
+      </div>
+      <div className='gradient'></div>
+      <Footer linkedIn={linkedIn} gitHub={gitHub} portfolio ={portfolio} />
+    </div>
   )
 }
 
