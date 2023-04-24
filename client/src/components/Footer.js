@@ -9,7 +9,6 @@ const Footer = (props) => {
     const [hover, setHover] = useState(false)
   return (
     <footer>
-        
         <h2>Contact the Developer</h2>
         <h3><img src={OWL_ICON} alt='Scribbler the Owl icon' /> Kacy Gilbert <img src={OWL_ICON} alt="Scribbler the Owl icon" /></h3>
         <ul className='footer-list'>

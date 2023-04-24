@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import '../styles/login-reg.css'
 import { HashLink as Link } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OWL_ICON_orange from '../images/Owl_Icon_Orange.png'
@@ -140,6 +141,9 @@ const Login = () => {
           {hover ? <span className='ocean-text'>Now!</span> : <span className='orange-text'>An Account?</span>}
         </section>
       </div>
+      <p>--Login & Registration currently Inoperable-- <br />
+        <Link to='/home'>Continue to Scribbler's Sanctuary as Guest.</Link>
+      </p>
     </section>
     )}
     </>

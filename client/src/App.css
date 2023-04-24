@@ -3,7 +3,7 @@
   --dark-blue: #011F26;
   --steel: lightsteelblue;
   --ocean: #01403A;
-  --green: #489723;
+  --green: #a0dd48;
   --orange: #f77824;
   --yellow: #F2B705;
   --gold: #F29F05;
@@ -28,137 +28,16 @@ main {
   padding: 0;
   margin: 0;
   font-family: var(--Neucha);
-  background-color: black ;
-  color: black;
+  background-image: linear-gradient(79deg,#01403A,#489723 48%, #011F26);
   text-align: center;
 }
-h2,h3 {
-  color: var(--steel);
-}
-a{
-  color: var(--orange);
-}
-a:hover {
+main a{
   color: var(--ocean);
+}
+main a:hover {
   cursor: pointer;
-}
-
-
-.log-reg {
-  color: white;
-    /* Tech2 Tutorial */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(79deg,#01403A,#489723 48%, #011F26);
-}
-.log-reg h1 {
-  font-size: 3rem;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 2rem;
-  font-family: var(--Zeyada);
-}
-.auth-form-container, .login-form, .register-form {
-  display: flex;
-  flex-direction: column;
-}
-.auth-form-container {
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 5rem;
-  margin: 0.5rem;
-  width: 80%;
-  max-width: 850px;
-  row-gap: 2rem;
-}
-.log-reg label {
-  text-align: left;
-  padding: 0.25rem 0;
-}
-.log-reg input {
-  margin: 0.5rem 0;
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-}
-[class*='valid'] {
-  background-color: #F2B705;
-  border-radius: 35px;
-  padding: 3px 5px;
-  margin-left: 15px;
-}
-[class*='invalid'] {
-  background-color: red;
-  border-radius: 35px;
-  padding: 3px 5px;
-  margin-left: 15px;
-}
-.log-reg button {
-  border: none;
-  align-self: right;
-  background-color: var(--ocean);
-  color: var(--orange);
-  padding: 20px;
-  width: 300px;
-  border-top: 3px solid var(--orange);
-  border-right: 3px solid var(--orange);
-  border-radius: 20px;
-  font-size: 2rem;
-  cursor: pointer;
-}
-.log-reg button:hover {
-  background-color: var(--orange);
-  color: var(--ocean);
-  border-bottom: 3px solid var(--ocean);
-  border-left: 3px solid var(--ocean);
-}
-.log-reg .link-btn {
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-  width: 20rem;
-  height: 20rem;
-}
-.log-reg .link-btn:hover {
-  border: none;
-  background: none;
-}
-#inv-btn {
-  background-color:var(--orange);
-  color: var(--ocean);
-  border-bottom: 3px solid var(--ocean);
-  border-left: 3px solid var(--ocean);
-}
-#inv-btn:hover {
-  background-color: var(--ocean);
   color: var(--orange);
 }
-.orange-text {
-  color: var(--orange);
-}
-.ocean-text {
-  color: var(--ocean);
-}
-.line {
-  display: flex;
-  margin: 0 auto;
-  height: 100px;
-  width:max-content;
-  justify-content: center;
-  align-items: center;
-}
-.line span {
-  min-width: 100px;
-  max-width: 100px;
-  text-align: center;
-  font-size: 2rem;
-  padding: 3px;
-}
-
 
 .offscreen {
   border: 0;

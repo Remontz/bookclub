@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import '../styles/login-reg.css'
 import { HashLink as Link } from 'react-router-hash-link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import OWL_ICON_orange from '../images/Owl_Icon_Orange.png'
@@ -59,6 +60,7 @@ const Register = () => {
     console.log(user, pwd);
     console.log('TODO BACKEND AFTER NODE.JS COURSE!!!')
     setSuccess(true)
+    alert('User Login & Registration not Functional. Please Continue as Guest.')
   }
 
   return (
@@ -172,6 +174,8 @@ const Register = () => {
           {hover ? <span className='orange-text'>In!</span> : <span className='ocean-text'>Registered?</span>}
         </section>
       </div>
+        <p>--Login & Registration currently Inoperable-- <br />
+        <Link to='/home'>Continue to Scribbler's Sanctuary as Guest.</Link></p>
     </section> 
     )}
     </>
