@@ -1,9 +1,11 @@
 import React from 'react'
 
-const rafce = () => {
+const Dashboard = () => {
   return (
-    <div>rafce</div>
+    <div>
+      
+    </div>
   )
 }
 
-export default rafce
+export default Dashboard

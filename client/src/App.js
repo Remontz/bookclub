@@ -28,7 +28,6 @@ function App() {
   return (
     <BrowserRouter>
     <main>
-
       <Routes>
         <Route element={<Register  />} path='/' />
         <Route element={<Login />} path='/login' />

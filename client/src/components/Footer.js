@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import KG_LOGO_orange from '../images/KG_logo_orange.jpg';
 import KG_LOGO_ocean from '../images/KG_logo_ocean.jpg';
-import OWL_ICON from '../images/Owl_Icon.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import OWL_ICON from '../images/Owl_Icon_Orange.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const owl = <img id='icon' src={OWL_ICON} alt='Scribbler the Owl: icon'/>;
 
 const Footer = (props) => {
     const {linkedIn, gitHub, portfolio} = props;
@@ -10,7 +12,7 @@ const Footer = (props) => {
   return (
     <footer>
         <h2>Contact the Developer</h2>
-        <h3><img src={OWL_ICON} alt='Scribbler the Owl icon' /> Kacy Gilbert <img src={OWL_ICON} alt="Scribbler the Owl icon" /></h3>
+        <h3>{owl}Kacy Gilbert{owl}</h3>
         <ul className='footer-list'>
             <li>
                 <a href={linkedIn} target='_blank' rel='noreferrer'>
@@ -26,7 +28,7 @@ const Footer = (props) => {
             </li>
             <li>
                 <a href={portfolio} target='_blank' rel='noreferrer'>
-                    <img onMouseOver={() => setHover(true)} onMouseOut={()=> setHover(false)} src={hover ? KG_LOGO_ocean : KG_LOGO_orange} alt='Kacy Gilbert Developer Logo' />
+                    <img onMouseOver={() => setHover(true)} onMouseOut={()=> setHover(false)} src={hover ? KG_LOGO_orange : KG_LOGO_ocean} alt='Kacy Gilbert Developer Logo' />
                     <span className='sr-only'>Software Developer Kacy Gilbert</span>
                 </a>
             </li>

@@ -63,6 +63,7 @@ main a:hover {
 }
 .ocean {
   background-color: var(--ocean);
+  min-width: max-content;
 }
 .green {
   background-color: var(--green);

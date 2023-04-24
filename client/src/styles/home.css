@@ -1,4 +1,5 @@
 .home {
+    font-family: var(--Neucha);
     color: white;
     display: flex;
     flex-direction: column;
@@ -6,4 +7,99 @@
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(79deg,#01403A,#489723 48%, #011F26);
+}
+.home h3 {
+    font-family: var(--Zeyada);
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    text-decoration: double underline;
+    text-decoration-color: var(--orange);
+}
+.home .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 5px;
+    column-gap: 5rem;
+}
+.home .content section:first-child {
+    border-right: 1px solid white;
+    padding-right: 2.5rem;
+    margin-right: 0;
+}
+.home .content section:nth-child(2) {
+    border-left: 1px solid white;
+    padding-left: 2.5rem;
+    margin-left: 0;
+}
+.home .content:first-child, .content section:first-child form {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    text-align: left;
+    row-gap: 2rem;
+}
+.home form input, textarea {
+    background-color: var(--steel);
+    border: 3px solid var(--orange);
+    border-top: none;
+    border-left: none;
+    border-radius: 25px;
+}
+
+.home form div {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 1rem;
+    border-left: 0.5px solid var(--orange);
+    border-top: 2px solid var(--orange);
+    border-radius: 20px;
+    padding: 1rem;
+}
+.home form div:nth-child(2) {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 1rem;
+}
+.home button {
+    border: none;
+    background-color:var(--orange);
+    color: var(--ocean);
+    padding: 1rem;
+    align-self: left;
+    width: 10rem;
+    border: 1px solid var(--dark-blue);
+    border-radius: 15px;
+}
+.home button:hover {
+    border: 2px solid var(--steel);
+}
+
+.home .content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.home .content ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+.home .content li {
+    border-left: 1px solid var(--orange);
+    border-top: 3px solid var(--orange);
+    border-radius: 20px;
+    padding: 0 0.5rem;
+}
+@media (min-width: 900px) {
+    .home .content {
+        flex-flow: row;
+        margin: 0 auto;
+    }
+    .home .content ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

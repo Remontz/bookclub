@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 import LOGO from '../images/Owl_Logo_NoBackground.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = (props) => {
-
-
+    const [favoritesHover, setFavoritesHover] = useState(false)
+    const [editUserHover, setEditUserHover] = useState(false)
+    const [createBookHover, setCreateBookHover] = useState(false)
   return (
     <nav>
         <ul>
@@ -26,30 +27,22 @@ const Nav = (props) => {
                 </ul>
             </li>
             <li>
-                <ul>
-                    <li>
-                        <Link to = '/dashboard#favorites'>
-                            <ul id="icon">
-                                <li><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true" /></li>
-                                <li><span><small>Favorites</small></span></li>
-                            </ul>
-                        </Link>
+                <ul className = 'nav-links'>
+                    <li
+                        onMouseOver={() => setFavoritesHover(true)}
+                        onMouseOut={() => setFavoritesHover(false)} 
+                    >{favoritesHover ? (<Link to="/dashboard#favorites"><span>Favorites</span></Link>) : (<Link to="/dashboard#favorites"><span><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true" /></span></Link>) }
                     </li>
-                    <li>
-                        <Link to="/editUser">
-                            <ul id="icon">
-                                <li><FontAwesomeIcon icon="fa-solid fa-brands fa-earlybirds" aria-hidden="true" /></li>
-                                <li><span><small>Edit Profile</small></span></li>
-                            </ul>
-                        </Link>
+                    <li
+                        onMouseOver={() => setEditUserHover(true)}
+                        onMouseOut={() => setEditUserHover(false)} 
+                    >{editUserHover ? (<Link to="/editUser"><span>Edit Profile</span></Link>) : (<Link to="/editUser"><span><FontAwesomeIcon icon="fa-solid fa-brands fa-earlybirds" aria-hidden="true" /></span></Link>) }
                     </li>
-                    <li>
-                        <Link to="/createBook" className='button'>
-                            <ul id="icon">
-                                <li><FontAwesomeIcon icon="fa-solid fa-feather-pointed fa-beat" aria-hidden="true" /></li>
-                                <li><span><small>Writing Mode</small></span></li>
-                            </ul>
-                        </Link>
+                    <li
+                        className={createBookHover ? null : 'button'}
+                        onMouseOver={() => setCreateBookHover(true)}
+                        onMouseOut={() => setCreateBookHover(false)} 
+                    >{createBookHover ? (<Link to="/createBook"><span>Writer's Mode</span></Link>) : (<Link to="/createBook"><span><FontAwesomeIcon icon="fa-solid fa-feather-pointed fa-beat" aria-hidden="true" /></span></Link>) }
                     </li>
                 </ul>
             </li>
