@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState} from 'react'
 import './Styles/chess.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -19,23 +19,32 @@ const chessBoard = [
     [0, 1, 2, 3, 4, 5, 6, 7]
 ]
 
-const moveQueen = () => {
-    console.log('move Queen function')
-}
-const moveKing = () => {
-    console.log('move King function')
-}
-const moveBishop = () => {
-    console.log('move Bishop function')
-}
-const moveKnight = () => {
-    console.log('move Knight function')
-}
-const moveRook = () => {
-    console.log('move Rook function')
-}
-const movePawn = () => {
-    console.log('move Pawn function')
+
+const movePiece = event => {
+    let piecePosition = event.currentTarget.className.toString()
+    console.log(piecePosition)
+    // remove numbers from the piecePositionString
+    let currentPiece = ''
+    for(let i = 0; i < piecePosition.length; i++) {
+        if(isNaN(piecePosition[i])) {
+            if(piecePosition[i] !== '-') {currentPiece += piecePosition[i]} 
+        } 
+    }
+    console.log(currentPiece)
+    let currentRank = piecePosition[piecePosition.length-3]
+    let currentIndex = piecePosition[piecePosition.length-1]
+    console.log(`currentRank: ${currentRank} | currentIndex: ${currentIndex}`)
+    // may movePieceGld & movePieceYlw
+    // create new string that takes 'gld-square and numbers from piecePositionString
+    let availableSpaces = []
+    if(currentPiece === 'pawn') {
+        let topAvailable = document.getElementsByClassName(`gld-square ${currentRank+1}-${currentIndex}`)
+        topAvailable.classList.add('blue-square')
+    }
+    // add movement to picepositionnumbers for new square
+    // highlight possible moves, toggle state for moving, not moving
+    // use new string to access className gld-square + piece position numbers
+    // delete icon from old div, get & change element of new div
 }
 
 const generateBoard = () => {
@@ -45,49 +54,46 @@ const generateBoard = () => {
                 {file.map((square, index) => {
                     if(rank%2===0) {
                         return index%2 === 0 ? 
-                            <div className = { `gld-square ${rank}, ${index}` }>
+                            <div className = { `gld-square ${rank}-${index}` }>
                                 {rank === 0 ? 
                                     index === 0 ? <p id={whtRook.color}>{whtRook.icon}</p>  :
                                     index === 2 ? <p id={whtKnight.color}>{whtKnight.icon}</p> :
                                     index === 4 ? <p id={whtQueen.color}>{whtQueen.icon}</p> :
                                         <p id={whtBishop.color}>{whtBishop.icon}</p> : 
-                                    rank === 6 ?  <p id={blkPawn.color}>{blkPawn.icon}</p> : 
+                                    rank === 6 ?  <p id={blkPawn.color} className={`pawn ${rank}-${index}`} onClick={movePiece}>{blkPawn.icon}</p> : 
                                     <p></p>
                                 }
                             </div> 
-                            : <div className = { `ylw-square ${rank}, ${index}` }>
+                            : <div className = { `ylw-square ${rank}-${index}` }>
                                 {rank === 0 ? 
                                     index === 1 ? <p id={whtBishop.color}>{whtBishop.icon}</p>  :
                                     index === 3 ? <p id={whtKing.color}>{whtKing.icon}</p> :
                                     index === 5 ? <p id={whtKnight.color}>{whtKnight.icon}</p> :
-                                        <p id={whtRook.color}>{whtRook.icon}</p> : null
-                                }
-                                {rank === 6 ?
-                                    <p>{blkPawn.icon}</p> : null
+                                        <p id={whtRook.color}>{whtRook.icon}</p> : 
+                                    rank === 6 ?  <p id={blkPawn.color} className='pawn' onClick={movePiece}>{blkPawn.icon}</p> : 
+                                    <p></p>
                                 }
                             </div>
                     } else {
                         return index%2 === 0 ? 
-                            <div className = { `ylw-square ${rank}, ${index}` }>
+                            <div className = { `ylw-square ${rank}-${index}` }>
                                 {rank === 1 ?
-                                    <p id='white'>{whtPawn.icon}</p> : null
-                                }
-                                {rank === 7 ? 
+                                    <p id={whtPawn.color} className='pawn' onClick={movePiece}>{whtPawn.icon}</p> : 
+                                rank === 7 ? 
                                     index === 0 ? <p>{blkRook.icon}</p>  :
                                     index === 2 ? <p>{blkKnight.icon}</p> :
                                     index === 4 ? <p>{blkQueen.icon}</p> :
-                                        <p>{blkBishop.icon}</p> : null
+                                        <p>{blkBishop.icon}</p> : <p></p>
                                 }
                             </div> 
-                            : <div className = { `gld-square ${rank}, ${index}` }>
+                            : <div className = { `gld-square ${rank}-${index}` }>
                                 {rank === 1 ?
-                                    <p id='white'>{whtPawn.icon}</p> : null
-                                }
-                                {rank === 7 ? 
+                                    <p id={whtPawn.color} className='pawn' onClick={movePiece}>{whtPawn.icon}</p> : 
+                                rank === 7 ? 
                                     index === 1 ? <p>{blkBishop.icon}</p>  :
                                     index === 3 ? <p>{blkKing.icon}</p> :
                                     index === 5 ? <p>{blkKnight.icon}</p> :
-                                        <p>{blkRook.icon}</p> : null
+                                        <p>{blkRook.icon}</p> : <p></p>
                                 }
                             </div>
                     }
@@ -210,9 +216,11 @@ const whtPawn = {
         
 
 const Chess = () => {
+    const [class0-0, setClass0-0] = useState(true)
+    let game = generateBoard()
   return (
     <section className='board'>
-        {generateBoard()}
+        {game}
     </section>
   )
 }

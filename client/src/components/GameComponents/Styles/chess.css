@@ -49,3 +49,7 @@ section {
 #black {
     color: black;
 }
+
+.blue-square {
+    background-color: (var --steel);
+}
