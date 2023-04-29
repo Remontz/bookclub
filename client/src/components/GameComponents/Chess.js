@@ -45,23 +45,22 @@ const generateBoard = () => {
                 {file.map((square, index) => {
                     if(rank%2===0) {
                         return index%2 === 0 ? 
-                            <div className='gld-square'>
+                            <div className = { `gld-square ${rank}, ${index}` }>
                                 {rank === 0 ? 
-                                    index === 0 ? <p id='white'>{whtRook.icon}</p>  :
-                                    index === 2 ? <p id='white'>{whtKnight.icon}</p> :
-                                    index === 4 ? <p id='white'>{whtQueen.icon}</p> :
-                                        <p id='white'>{whtBishop.icon}</p> : null
-                                }
-                                {rank === 6 ?
-                                    <p>{blkPawn.icon}</p> : null
+                                    index === 0 ? <p id={whtRook.color}>{whtRook.icon}</p>  :
+                                    index === 2 ? <p id={whtKnight.color}>{whtKnight.icon}</p> :
+                                    index === 4 ? <p id={whtQueen.color}>{whtQueen.icon}</p> :
+                                        <p id={whtBishop.color}>{whtBishop.icon}</p> : 
+                                    rank === 6 ?  <p id={blkPawn.color}>{blkPawn.icon}</p> : 
+                                    <p></p>
                                 }
                             </div> 
-                            : <div className='ylw-square'>
+                            : <div className = { `ylw-square ${rank}, ${index}` }>
                                 {rank === 0 ? 
-                                    index === 1 ? <p id='white'>{whtBishop.icon}</p>  :
-                                    index === 3 ? <p id='white'>{whtKing.icon}</p> :
-                                    index === 5 ? <p id='white'>{whtKnight.icon}</p> :
-                                        <p id='white'>{whtRook.icon}</p> : null
+                                    index === 1 ? <p id={whtBishop.color}>{whtBishop.icon}</p>  :
+                                    index === 3 ? <p id={whtKing.color}>{whtKing.icon}</p> :
+                                    index === 5 ? <p id={whtKnight.color}>{whtKnight.icon}</p> :
+                                        <p id={whtRook.color}>{whtRook.icon}</p> : null
                                 }
                                 {rank === 6 ?
                                     <p>{blkPawn.icon}</p> : null
@@ -69,7 +68,7 @@ const generateBoard = () => {
                             </div>
                     } else {
                         return index%2 === 0 ? 
-                            <div className='ylw-square'>
+                            <div className = { `ylw-square ${rank}, ${index}` }>
                                 {rank === 1 ?
                                     <p id='white'>{whtPawn.icon}</p> : null
                                 }
@@ -80,7 +79,7 @@ const generateBoard = () => {
                                         <p>{blkBishop.icon}</p> : null
                                 }
                             </div> 
-                            : <div className='gld-square'>
+                            : <div className = { `gld-square ${rank}, ${index}` }>
                                 {rank === 1 ?
                                     <p id='white'>{whtPawn.icon}</p> : null
                                 }
@@ -111,7 +110,7 @@ const blkKing = {
 }
 const whtKing = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-king" />,
-    color: 'black',
+    color: 'white',
     startingPos: [0, 3],
     currentPos: [0,3],
     move: moveKing()
@@ -126,7 +125,7 @@ const blkQueen = {
 }
 const whtQueen = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-queen" />,
-    color: 'black',
+    color: 'white',
     startingPos: [0, 4],
     currentPos: [0, 4],
     move: moveQueen()
@@ -141,7 +140,7 @@ const blkBishop = {
 }
 const whtBishop = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-bishop" />,
-    color: 'black',
+    color: 'white',
     startingPos: [[0,1], [0,6]],
     currentPos: [[0,1], [0,6]],
     move: moveBishop()
@@ -156,7 +155,7 @@ const blkKnight = {
 }
 const whtKnight = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-knight" />,
-    color: 'black',
+    color: 'white',
     startingPos: [[0,2],[0,5]],
     currentPos: [[0,2],[0,5]],
     move: moveKnight() 
@@ -171,7 +170,7 @@ const blkRook = {
 }
 const whtRook = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-rook" />,
-    color: 'black',
+    color: 'white',
     startingPos: [[0,0],[0,7]],
     currentPos: [[0,0],[0,7]],
     move: moveRook()
