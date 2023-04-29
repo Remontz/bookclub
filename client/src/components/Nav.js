@@ -7,6 +7,7 @@ const Nav = (props) => {
     const [favoritesHover, setFavoritesHover] = useState(false)
     const [editUserHover, setEditUserHover] = useState(false)
     const [createBookHover, setCreateBookHover] = useState(false)
+    const [loungeHover, setLoungeHover] = useState(false)
   return (
     <nav>
         <ul>
@@ -31,7 +32,7 @@ const Nav = (props) => {
                     <li
                         onMouseOver={() => setFavoritesHover(true)}
                         onMouseOut={() => setFavoritesHover(false)} 
-                    >{favoritesHover ? (<Link to="/dashboard#favorites"><span>Favorites</span></Link>) : (<Link to="/dashboard#favorites"><span><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true" /></span></Link>) }
+                    >{ favoritesHover ? (<Link to="/dashboard#favorites"><span>Favorites</span></Link>) : (<Link to="/dashboard#favorites"><span><FontAwesomeIcon icon="fa-solid fa-bookmark" aria-hidden="true" /></span></Link>) }
                     </li>
                     <li
                         onMouseOver={() => setEditUserHover(true)}
@@ -43,6 +44,11 @@ const Nav = (props) => {
                         onMouseOver={() => setCreateBookHover(true)}
                         onMouseOut={() => setCreateBookHover(false)} 
                     >{createBookHover ? (<Link to="/editor"><span>Writer's Mode</span></Link>) : (<Link to="/editor"><span><FontAwesomeIcon icon="fa-solid fa-feather-pointed fa-beat" aria-hidden="true" /></span></Link>) }
+                    </li>
+                    <li
+                        onMouseOver={() => setLoungeHover(true)}
+                        onMouseOut={() => setLoungeHover(false)} 
+                    >{loungeHover ? (<Link to="/lounge"><span>Game Lounge</span></Link>) : (<Link to="/lounge"><span><FontAwesomeIcon icon="fa-solid fa-chess" aria-hidden="true" /></span></Link>) }
                     </li>
                 </ul>
             </li>

@@ -14,6 +14,7 @@ import EditBook from './views/EditBook';
 import EditUser from './views/EditUser';
 import Home from './views/Home';
 import ViewBook from './views/ViewBook';
+import GameLounge from './views/GameLounge';
 
 function App() {
   library.add(fab, fas, faCheck, faTimes, faInfoCircle)
@@ -38,6 +39,7 @@ function App() {
         <Route element={<CreateBook />} path='/writer' />
         <Route element={<ViewBook linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/reader' />
         <Route element={<About linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/about' />
+        <Route element={<GameLounge linkedIn={linkedIn} gitHub={gitHub} portfolio={portfolio} />} path='/lounge' />
       </Routes>
       <Helmet>
         <meta name="google-site-verification" content="2q6eKNMWpbgPeaba3SQGyIx-Q6aPsdS9KUXVZ2Vlp2U" />
