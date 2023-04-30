@@ -22,3 +22,26 @@
 .tile--dark {
     background: var(--dark-tile);
 }
+
+.highlight:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(0.5*var(--tile-size));
+    height: calc(0.5*var(--tile-size));
+    background-color: rgba(68, 174, 15, 0.3);
+    border-radius: 50%;
+    left: 25%;
+    top: 25%;
+}
+.attacking:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(var(--tile-size) - 12px);
+    height: calc(var(--tile-size) - 12px);
+    border: 6px solid orangered;
+    border-radius: 50%;
+    left: 5%;
+    top: 10%;
+}

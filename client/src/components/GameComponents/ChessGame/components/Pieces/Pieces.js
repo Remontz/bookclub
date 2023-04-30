@@ -2,13 +2,17 @@ import React, {useState, useRef} from 'react'
 import './Pieces.css'
 import Piece from './Piece'
 import { createPosition, copyPosition } from '../../helper'
+import { useAppContext } from '../../contexts/Context'
+import { clearCandidates, makeNewMove } from '../../reducer/actions/move'
 
 
 const Pieces = () => {
 
     const ref = useRef()
 
-    const [state, setState] = useState(createPosition())
+    const {appState, dispatch} = useAppContext()
+
+    const currentPosition = appState.position[appState.position.length-1]
 
     const calcCoords = e => {
         const {top,left,width} = ref.current.getBoundingClientRect()
@@ -19,15 +23,19 @@ const Pieces = () => {
     }
 
     const onDrop = e => {
-        const newPosition = copyPosition(state)
+        const newPosition = copyPosition(currentPosition)
         const {x, y} = calcCoords(e)
 
         const [piece,rank,file] = e.dataTransfer.getData('text/plain').split(',')
+        if(appState.candidateMoves?.find(m => m[0] === x && m[1] === y)){
+            newPosition[Number(rank)][Number(file)] = ''
+            newPosition[x][y] = piece
+            dispatch(makeNewMove({newPosition}))
+        }
 
-        newPosition[rank][file] = ''
-        newPosition[x][y] = piece
+        dispatch(clearCandidates())
 
-        setState(newPosition)
+
     }
     const onDragOver = e => e.preventDefault();
 
@@ -37,14 +45,14 @@ const Pieces = () => {
     onDrop = {onDrop}
     onDragOver = {onDragOver}
     className='pieces'>
-        {state.map((r, rank) => 
+        {currentPosition.map((r, rank) => 
             r.map((f,file) => 
-                state[rank][file] 
+                currentPosition[rank][file] 
                 ?  <Piece
                         key={rank+'-'+file}
                         rank={rank}
                         file={file}
-                        piece={state[rank][file]}
+                        piece={currentPosition[rank][file]}
                         />
                 : null
         ))}

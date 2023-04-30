@@ -21,10 +21,10 @@ export const createPosition = () => {
     position[0][6] = 'wn'
     position[0][7] = 'wr'
 
-    for (let i = 0; i < 8; i++) {
-        position[1][i] = 'wp'
-        position[6][i] = 'bp'
-    }
+    // for (let i = 0; i < 8; i++) {
+    //     position[1][i] = 'wp'
+    //     position[6][i] = 'bp'
+    // }
 
     return position
 }
