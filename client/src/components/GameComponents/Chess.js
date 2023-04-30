@@ -112,14 +112,14 @@ const blkKing = {
     color: 'black',
     startingPos: [7, 3],
     currentPos: [7,3],
-    move: moveKing()
+    // move: moveKing()
 }
 const whtKing = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-king" />,
     color: 'white',
     startingPos: [0, 3],
     currentPos: [0,3],
-    move: moveKing()
+    // move: moveKing()
 }
 
 const blkQueen = {
@@ -127,14 +127,14 @@ const blkQueen = {
     color: 'black',
     startingPos: [7, 4],
     currentPos: [7, 4],
-    move: moveQueen()
+    // move: moveQueen()
 }
 const whtQueen = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-queen" />,
     color: 'white',
     startingPos: [0, 4],
     currentPos: [0, 4],
-    move: moveQueen()
+    // move: moveQueen()
 }
 
 const blkBishop = {
@@ -142,14 +142,14 @@ const blkBishop = {
     color: 'black',
     startingPos: [[7,1], [7,6]],
     currentPos: [[7,1], [7,6]],
-    move: moveBishop()
+    // move: moveBishop()
 }
 const whtBishop = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-bishop" />,
     color: 'white',
     startingPos: [[0,1], [0,6]],
     currentPos: [[0,1], [0,6]],
-    move: moveBishop()
+    // move: moveBishop()
 }
 
 const blkKnight = {
@@ -157,14 +157,14 @@ const blkKnight = {
     color: 'black',
     startingPos: [[7,2],[7,5]],
     currentPos: [[7,2],[7,5]],
-    move: moveKnight() 
+    // move: moveKnight() 
 }
 const whtKnight = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-knight" />,
     color: 'white',
     startingPos: [[0,2],[0,5]],
     currentPos: [[0,2],[0,5]],
-    move: moveKnight() 
+    // move: moveKnight() 
 }
 
 const blkRook = {
@@ -172,14 +172,14 @@ const blkRook = {
     color: 'black',
     startingPos: [[7,0],[7,7]],
     currentPos: [[7,0],[7,7]],
-    move: moveRook()
+    // move: moveRook()
 }
 const whtRook = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-rook" />,
     color: 'white',
     startingPos: [[0,0],[0,7]],
     currentPos: [[0,0],[0,7]],
-    move: moveRook()
+    // move: moveRook()
 }
 
 
@@ -188,14 +188,14 @@ const blkPawn = {
     color: 'black',
     startingPos: [[6,0], [6,1], [6,2], [6,3], [6,4], [6,5], [6,6], [6,7]],
     currentPos: [[6,0], [6,1], [6,2], [6,3], [6,4], [6,5], [6,6], [6,7]],
-    move: movePawn() 
+    // move: movePawn() 
 }
 const whtPawn = {
     icon: <FontAwesomeIcon icon="fa-solid fa-chess-pawn" />,
     color: 'white',
     startingPos: [[1,0], [1,1], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7]],
     currentPos: [[1,0], [1,1], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7]],
-    move: movePawn() 
+    // move: movePawn() 
 }
 
 
@@ -216,7 +216,7 @@ const whtPawn = {
         
 
 const Chess = () => {
-    const [class0-0, setClass0-0] = useState(true)
+    
     let game = generateBoard()
   return (
     <section className='board'>

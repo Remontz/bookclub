@@ -1,0 +1,27 @@
+:root {
+    --tile-size: 100px;
+    --light-tile: #f8d887;
+    --dark-tile: #B48764;
+    --bg-color: #202020;
+}
+
+@media all and (max-width : 450px) {
+    :root {
+        --title-size: 50px;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.chessApp {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background: var(--bg-color);
+    grid-template-columns: auto 220px;
+}
+
